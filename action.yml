@@ -72,12 +72,14 @@ runs:
           # replace / with - in DEP_NAME
           DEP_NAME_CHANGESET=${DEP_NAME//\//-}
           if [ "$PKG_DIR" = "." ]; then
-            CHANGESET_FILE="./.changeset/${{ github.event.number }}-${PKG_NAME}-${DEP_NAME_CHANGESET}.md"
+            CHANGESET_FILE="${{ github.event.number }}-${PKG_NAME}-${DEP_NAME_CHANGESET}.md"
           else
-            CHANGESET_FILE="./.changeset/${{ github.event.number }}-${PKG_DIR}-${PKG_NAME}-${DEP_NAME_CHANGESET}.md"
+            CHANGESET_FILE="${{ github.event.number }}-${PKG_DIR}-${PKG_NAME}-${DEP_NAME_CHANGESET}.md"
           fi
           # replace '/' with
           CHANGESET_FILE=${CHANGESET_FILE//\//-}
+          # add ./.changeset/ prefix
+          CHANGESET_FILE="./.changeset/$CHANGESET_FILE"
           # Always overwrite changeset file in the beginning - '>' will create the file if it doesn't exist
           echo "---" > $CHANGESET_FILE
           echo "$PKG_NAME: $DEP_CHANGESET_TYPE" >> $CHANGESET_FILE

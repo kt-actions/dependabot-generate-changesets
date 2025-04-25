@@ -82,7 +82,7 @@ runs:
           CHANGESET_FILE="./.changeset/$CHANGESET_FILE"
           # Always overwrite changeset file in the beginning - '>' will create the file if it doesn't exist
           echo "---" > $CHANGESET_FILE
-          echo "$PKG_NAME: $DEP_CHANGESET_TYPE" >> $CHANGESET_FILE
+          echo "'$PKG_NAME': $DEP_CHANGESET_TYPE" >> $CHANGESET_FILE
           echo "---" >> $CHANGESET_FILE
           echo "" >> $CHANGESET_FILE
           if [ -n "$DEP_PREV_VERSION" ] && [ -n "$DEP_NEW_VERSION" ]; then

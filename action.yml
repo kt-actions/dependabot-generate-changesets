@@ -12,6 +12,7 @@ inputs:
     required: false
     description: 'Map version updates from dependabot/fetch-metadata action to changeset types'
     default: '{"semver-patch": "patch", "semver-minor": "patch", "semver-major": "patch"}'
+
 outputs:
   updated-dependencies-json:
     description: 'Json array of updated dependencies'

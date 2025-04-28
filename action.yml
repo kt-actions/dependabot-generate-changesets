@@ -1,7 +1,5 @@
 name: Generate changesets for Dependabot PRs
-description: Add/update changeset files for Dependabot PR.
-  This action is used in the context of a pull request created by Dependabot.
-  It creates a changeset files in the `.changeset` directory.
+description: Add/update changeset files for Dependabot PR. This action is used in the context of a pull request created by Dependabot. It creates a changeset files in the `.changeset` directory.
 
 inputs:
   token:
